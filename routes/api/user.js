@@ -5,16 +5,16 @@ const router = express.Router();
 const User = require('../../models/Cliente');
 
 router.get('/clientes', (req, res) => {
-  User.find((err, clientes) => {
+  User.find((err, users) => {
     if (err) throw err;
-    res.status(200).json(clientes);
+    res.status(200).json(users);
     });
 });
 
 router.get('/cliente/:id', (req, res) => {
-  User.findOne({ id: req.params.id }, (err, cliente) => {
+  User.findOne({ id: req.params.id }, (err, user) => {
     if (err) throw err;
-    res.status(200).json(cliente);
+    res.status(200).json(user);
     });
 });
 
