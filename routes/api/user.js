@@ -1,14 +1,21 @@
-// usamos express
 const express = require('express');
-// creamos un router
+
 const router = express.Router();
-// GET a /api/users (todos los usuarios)
-router.get('/users', (req, res) => {
-res.send('todos los usuarios');
+
+const User = require('../../models/Cliente');
+
+router.get('/clientes', (req, res) => {
+  User.find((err, clientes) => {
+    if (err) throw err;
+    res.status(200).json(clientes);
+    });
 });
-// GET a /api/user/id (un solo usuario)
-router.get('/user/:id', (req, res) => {
-res.send('el usuario con id ' + req.params.id);
+
+router.get('/cliente/:id', (req, res) => {
+  User.findOne({ id: req.params.id }, (err, cliente) => {
+    if (err) throw err;
+    res.status(200).json(cliente);
+    });
 });
-// hay que exportar el router para usarlo en index.js
+
 module.exports = router;
