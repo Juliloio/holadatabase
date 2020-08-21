@@ -2,9 +2,6 @@
 const mongoose = require('mongoose');
 // importar el modelo de usuario
 const User = require('./models/User');
-// la URI de la db
-const db = 'mongodb+srv://hellodb:melincue@cluster0.cb3iv.mongodb.net/hellodb?retryWrites=true&w=majority'
-//const db = 'mongodb://localhost/hellodb';
 // array de usuarios para ingresar a la db
 const users = [
 {
@@ -22,7 +19,6 @@ birthday: '2000-02-13'
 {
 id: 3,
 name: 'Pedro',
-
 mail: 'pedro@mail.com',
 birthday: '2000-05-19'
 },
@@ -52,3 +48,6 @@ mongoose.connection.close();
 });
 })
 .catch(err => console.error(`Connection error ${err}`));
+// la URI de la db
+const db = 'mongodb+srv://hellodb:melincue@cluster0.cb3iv.mongodb.net/hellodb?retryWrites=true&w=majority'
+//const db = 'mongodb://localhost/hellodb';
