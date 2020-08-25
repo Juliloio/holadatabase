@@ -4,7 +4,7 @@ const router = express.Router();
 
 const User = require('../../models/User');
 
-router.get('/clientes', (req, res) => {
+router.get('/users', (req, res) => {
   User.find((err, users) => {
     if (err) throw err;
     res.status(200).json(users);
