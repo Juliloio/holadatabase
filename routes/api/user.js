@@ -11,7 +11,7 @@ router.get('/clientes', (req, res) => {
     });
 });
 
-router.get('/cliente/:id', (req, res) => {
+router.get('/users/:id', (req, res) => {
   User.findOne({ id: req.params.id }, (err, user) => {
     if (err) throw err;
     res.status(200).json(user);
