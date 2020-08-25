@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const User = require('./models/Cliente');
+const User = require('./models/User');
 
 const db = 'mongodb+srv://hellodb:melincue@cluster0.udylw.mongodb.net/hellodb?retryWrites=true&w=majority';
 
