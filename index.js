@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors     = require('cors');
 
 // importamos el router que creamos para la api
-const router = require('./routes/api/User');
+const router = require('./routes/api/user');
 
 // puerto y base de datos
 const port = process.env.PORT        || 3000;
